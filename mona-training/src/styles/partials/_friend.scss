@@ -1,0 +1,31 @@
+.friend {
+  &__title {
+    font-size: 9vw;
+    font-family: AvenirThin;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-left: 3.5vw;
+  }
+  &__div {
+    display: flex;
+    align-items: center;
+    margin: 3vw;
+    margin: 15vw 3vw;
+  }
+  &__goback {
+    width: 3vw;
+  }
+}
+
+@include medium {
+  .friend {
+    &__title {
+    }
+    &__div {
+    }
+    &__goback {
+      width: 1.3vw;
+    }
+  }
+}

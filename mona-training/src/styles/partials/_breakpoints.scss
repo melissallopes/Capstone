@@ -1,0 +1,12 @@
+/*media query for 768px tablet*/
+@mixin medium {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin huge {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}

@@ -1,0 +1,137 @@
+.header {
+  background-color: #e3b0b2;
+
+  //mobile hidden
+  &__mobile {
+    display: none;
+  }
+
+  &__logo-image {
+    font-family: Enso;
+    color: #06fa9d;
+    font-size: 3vw;
+    margin: 0 3vw;
+  }
+  &__training {
+    font-family: AvenirRegular;
+    font-size: 2vw;
+    margin: 0 0.3vw;
+  }
+  &__deco-none {
+    text-decoration: none;
+  }
+
+  &__elements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    padding: 3vw;
+  }
+
+  &__link {
+    width: 3vw;
+    margin: 0 2vw;
+    color: $Silver;
+    text-decoration: none;
+
+    &-wrapper {
+      width: 50vw;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &-mobile__div {
+    background-color: #e3b0b2;
+    height: 15vw;
+    border-top-left-radius: 8vw;
+    border-top-right-radius: 8vw;
+  }
+
+  &-mobile__link {
+    width: 8vw;
+  }
+}
+
+@include medium {
+  .header {
+    height: 80px;
+    padding-left: 3.125vw;
+    display: flex;
+    align-items: flex-end;
+
+    &__logo {
+      &-box {
+        align-self: center;
+      }
+
+      &-image {
+        font-size: 2.3vw;
+        margin: 0 auto;
+      }
+    }
+    //////
+    &__training {
+      font-family: AvenirRegular;
+      font-size: 1.8vw;
+      margin: 0 0.3vw;
+    }
+    &__deco-none {
+      text-decoration: none;
+    }
+
+    //////
+    &__elements {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 80px;
+    }
+
+    &__link {
+      width: 3vw;
+      &-wrapper {
+        width: 10.5vw;
+        margin-right: 5.25vw;
+      }
+    }
+
+    &__nav {
+      margin-left: 50vw;
+    }
+  }
+}
+
+@include huge {
+  .header {
+    padding-left: 12.5vw;
+
+    &__link {
+      &-wrapper {
+        margin-right: 3.888vw;
+      }
+    }
+
+    &__logo {
+      &-image {
+        height: 20px;
+      }
+    }
+
+    &__nav {
+      padding: 0.5vw;
+      margin-left: 50vw;
+    }
+    &__link {
+      width: 1.8vw;
+    }
+    &__logo-image {
+      font-size: 1.7vw;
+    }
+    &__training {
+      font-size: 1.2vw;
+    }
+  }
+}

@@ -1,0 +1,187 @@
+.footer {
+  background-color: #e3b0b2;
+  &__title {
+    font-family: AvenirBold;
+    color: $White;
+    margin: 0vw 5vw 5vw;
+    padding-top: 15.6vw;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5vw;
+  }
+
+  &__logo {
+    font-family: Enso;
+    color: #06fa9d;
+    font-size: 6.2vw;
+  }
+  &__training {
+    font-family: AvenirRegular;
+    font-size: 5vw;
+    margin: 0 1vw;
+  }
+  &__deco-none {
+    text-decoration: none;
+  }
+
+  &__names {
+    font-size: 3.4vw;
+    margin: 0 5vw;
+    color: $White;
+    font-family: AvenirRegular;
+    &__contact {
+      margin: 3vw;
+    }
+    &__email {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__tel {
+    color: white;
+    margin: 3vw 5vw;
+    font-size: 4.3vw;
+  }
+  &__names--padding {
+    padding-bottom: 9.3vw;
+    margin: 3vw 5vw;
+  }
+  &__head p a {
+    text-decoration: none;
+    margin: 5vw;
+    color: white;
+    font-size: 4.3vw;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.icons {
+  color: $Mercury;
+  margin: 5vw;
+}
+
+@include medium {
+  .footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__head p a {
+      font-size: 1.5vw;
+    }
+    &__tel {
+      font-size: 1.5vw;
+      margin: 1.5vw 5vw;
+    }
+
+    &__title {
+      margin-right: 0;
+      font-size: 3vw;
+      padding-top: 8vw;
+      margin-bottom: 2vw;
+    }
+    &__icons {
+      align-self: center;
+      height: 6vw;
+    }
+    &__logo {
+      font-size: 2.3vw;
+      margin: 0 auto;
+      margin-right: 5vw;
+    }
+    &__training {
+      font-family: AvenirRegular;
+      font-size: 1.8vw;
+      margin: 0 0.3vw;
+    }
+
+    &__deco-none {
+      text-decoration: none;
+      height: fit-content;
+    }
+
+    &__names {
+      font-size: 1.3vw;
+      margin: 0;
+      &--padding {
+        padding: 1.5vw 2vw 0vw 4vw;
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        margin-bottom: 5vw;
+      }
+    }
+    &__allnames {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+.icons {
+  margin: 2vw;
+}
+
+@include huge {
+  .footer {
+    &__head {
+      height: 12vw;
+      align-items: center;
+      padding-top: 1vw;
+    }
+    &__head p a {
+      font-size: 1vw;
+    }
+    &__tel {
+      font-size: 1vw;
+      margin: 1vw 5vw;
+    }
+    &__title {
+      margin: 0 2.9vw;
+      padding: 2vw;
+      font-size: 2vw;
+      padding: 4vw 2vw 1.5vw;
+    }
+    &__logo {
+      font-size: 1.7vw;
+      width: 8vw;
+      height: 10vw;
+      height: fit-content;
+      margin-bottom: 4vw;
+    }
+    &__training {
+      font-size: 1.2vw;
+    }
+    &__icons {
+      margin: 0;
+      margin-bottom: 1vw;
+      margin-right: 40vw;
+    }
+    &__names {
+      font-size: 0.9vw;
+      margin: 0 3.1vw;
+      margin-right: 0;
+      &--padding {
+        margin: 0;
+        padding: 1vw 0 2vw 5vw;
+        margin-bottom: 2vw;
+      }
+    }
+  }
+  .icons {
+    width: 20%;
+    height: 20%;
+  }
+}

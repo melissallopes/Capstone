@@ -1,0 +1,346 @@
+.exercise {
+  &__first-line {
+    display: flex;
+    align-items: center;
+  }
+  &__div {
+    margin: 20vw 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title-div {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    margin: 3vw 0 1vw;
+    align-items: center;
+  }
+  &__names-div {
+    margin: 2vw;
+    height: fit-content;
+  }
+  &__title-label {
+    color: $Silver;
+    font-family: AvenirRegular;
+    font-size: 4vw;
+    margin: 2vw 0;
+    text-transform: uppercase;
+  }
+  &__title-label-level {
+    color: $Silver;
+    font-family: AvenirRegular;
+    font-size: 4vw;
+    margin: 2vw 0;
+    text-transform: uppercase;
+  }
+  &__name {
+    font-family: AvenirRegular;
+    margin: 3vw;
+    margin-left: 8vw;
+  }
+  &__img {
+    width: 90vw;
+    height: 80vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 20px #ccc;
+    margin: 1vw;
+  }
+  &__goback {
+    width: 3vw;
+  }
+  &__label {
+    font-family: AvenirDemi;
+    margin: 3vw 5vw;
+    font-size: 5.2vw;
+  }
+  &__muscles {
+    font-size: 4.5vw;
+    color: #f15050;
+  }
+  &__level {
+    font-size: 4.5vw;
+    color: #f15050;
+  }
+  &__desc {
+    font-size: 4.5vw;
+    line-height: 7vw;
+    text-align: justify;
+  }
+  &__bft {
+    font-size: 4.5vw;
+    line-height: 7vw;
+    text-align: justify;
+  }
+  &__instruc {
+    font-size: 4.5vw;
+    line-height: 7vw;
+    text-align: justify;
+  }
+  &__variat {
+    font-size: 4.5vw;
+    line-height: 7vw;
+    text-align: justify;
+  }
+  &__prec {
+    font-size: 4.5vw;
+    line-height: 7vw;
+    text-align: justify;
+  }
+
+  &__desc-div {
+    margin: 5vw 0;
+  }
+  &__bft-div {
+    margin: 5vw 0;
+  }
+  &__inst-div {
+    margin: 5vw 0;
+  }
+  &__var-div {
+    margin: 5vw 0;
+  }
+  &__pre-div {
+    margin: 5vw 0;
+  }
+  &__bt-next {
+    border: none;
+    background-color: #eeee;
+    background-image: url("../assets/icons/ellipsis.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10vw;
+    height: 10vw;
+    background-size: 6vw;
+    display: block;
+    margin: 0 auto;
+    margin: 2vw auto;
+
+    &:hover {
+      background-color: #eeee;
+    }
+  }
+  &__bt-back {
+    background-image: url("../assets/icons/Icon-back-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 5vw;
+    height: 5vw;
+    border: none;
+    background-color: #eeee;
+  }
+  &__step-div {
+    display: flex;
+    align-items: center;
+    margin: 5vw 0;
+  }
+  &__muscle-div {
+    width: fit-content;
+    margin: 3vw auto;
+  }
+
+  &__muscle-img {
+    width: 80vw;
+    height: 70vw;
+    border-radius: 3vw;
+  }
+}
+
+@include medium {
+  .exercise {
+    &__div {
+      margin: 10vw 3vw;
+    }
+
+    &__name {
+      color: $Black;
+      margin: 1vw;
+      font-size: 4vw;
+      margin-left: 12vw;
+    }
+    &__title-label {
+      font-size: 2vw;
+      margin-right: 1vw;
+    }
+
+    &__title-label-level {
+      font-size: 2vw;
+      margin-right: 1vw;
+    }
+    &__muscles {
+      font-size: 2vw;
+      height: fit-content;
+    }
+    &__level {
+      font-size: 2.5vw;
+      height: fit-content;
+    }
+    &__title-div {
+      margin: 3vw 1vw 0;
+    }
+    &__names-div {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    &__label {
+      font-size: 3vw;
+    }
+    &__desc {
+      font-size: 2.5vw;
+      line-height: 4.5vw;
+    }
+    &__bft {
+      font-size: 2.5vw;
+      line-height: 4.5vw;
+    }
+    &__instruc {
+      font-size: 2.5vw;
+      line-height: 4.5vw;
+    }
+    &__variat {
+      font-size: 2.5vw;
+      line-height: 4.5vw;
+    }
+    &__prec {
+      font-size: 2.5vw;
+      line-height: 4.5vw;
+    }
+    &__goback {
+      width: 1.8vw;
+    }
+    &__desc-div {
+      margin: 2vw 0;
+    }
+    &__bft-div {
+      margin: 2vw 0;
+    }
+    &__inst-div {
+      margin: 2vw 0;
+    }
+    &__var-div {
+      margin: 2vw 0;
+    }
+    &__pre-div {
+      margin: 2vw 0;
+    }
+  }
+}
+
+@include huge {
+  .exercise {
+    &__muscle-img {
+      width: 50vw;
+      height: 40vw;
+    }
+    &__div {
+      width: 70vw;
+      margin: 5vw auto;
+    }
+    &__name {
+      font-size: 3vw;
+      //margin-right: 35vw;
+    }
+    &__names-div {
+      align-items: center;
+      margin: 1.6vw 0;
+      margin: 0.5vw 0;
+    }
+    &__title-label {
+      font-size: 1vw;
+      margin: 0 1vw;
+    }
+    &__title-div {
+      flex-direction: column;
+      order: 2;
+      align-self: flex-end;
+      align-items: start;
+      margin: 1vw 0;
+    }
+    &__title-label-level {
+      font-size: 1vw;
+      margin: 0 1vw;
+    }
+    &__muscles {
+      font-size: 1vw;
+    }
+    &__level {
+      font-size: 1vw;
+    }
+    &__img {
+      width: 40vw;
+      height: 30vw;
+    }
+    &__top {
+      display: flex;
+    }
+
+    &__label {
+      font-size: 2vw;
+      margin-top: 0;
+      margin-bottom: 2vw;
+    }
+    &__desc {
+      font-size: 1.2vw;
+      line-height: 2vw;
+    }
+    &__bft {
+      font-size: 1.2vw;
+      line-height: 2vw;
+    }
+    &__step-div {
+      margin: 5vw 0 1.5vw;
+    }
+    &__instruc {
+      font-size: 1.2vw;
+      line-height: 2vw;
+    }
+    &__variat {
+      font-size: 1.2vw;
+      line-height: 2vw;
+    }
+    &__prec {
+      font-size: 1.2vw;
+      line-height: 2vw;
+    }
+    &__desc-div {
+      margin: 2vw 0;
+    }
+    &__bft-div {
+      margin: 2vw 0;
+    }
+    &__inst-div {
+      margin: 2vw 0;
+    }
+    &__var-div {
+      margin: 2vw 0;
+    }
+    &__pre-div {
+      margin: 2vw 0;
+    }
+    &__goback {
+      width: 1vw;
+    }
+    &__bt-next {
+      background-size: 20%;
+      margin: 0 auto;
+      height: 5vw;
+      &:hover {
+        color: black;
+      }
+    }
+    &__bt-back {
+      float: left;
+      margin-top: 0.6vw;
+    }
+    &__title-flex {
+      width: 70vw;
+      margin: 3vw auto 5vw;
+    }
+    &__search-load-more {
+      background-size: 50%;
+      width: 6vw;
+      height: 3vw;
+    }
+  }
+}

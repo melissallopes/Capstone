@@ -1,0 +1,414 @@
+.userpro {
+  display: flex;
+  flex-direction: column;
+  &__days-tablet {
+    display: none;
+  }
+
+  &__img {
+    width: 50vw;
+    border-radius: 100vw;
+    margin: 5vw;
+  }
+  &__img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vw;
+    border-bottom: solid 0.3vw #cdcdcd;
+  }
+  &__name {
+    overflow: auto;
+    font-family: AvenirThin;
+    text-align: center;
+    margin: 3vw 0;
+    padding: 5vw;
+    border-radius: 2vw;
+  }
+  &__link {
+    text-decoration: none;
+    color: $Black;
+  }
+  &__box {
+    width: 90vw;
+    font-family: "Arial";
+    margin: 5vw auto;
+    border-collapse: collapse;
+  }
+
+  &__work-day {
+    width: 90vw;
+    background-image: url("../assets/icons/plus.svg");
+    background-repeat: no-repeat;
+    background-size: 5vw;
+    font-size: 8vw;
+    padding: 4vw;
+    text-align: left;
+    background-position: 72vw 7vw;
+    background-color: #eeee;
+    border: none;
+    border-bottom: solid 0.3vw $Black;
+    border-radius: 0;
+  }
+  &__work-day-open {
+    width: 90vw;
+    background-image: url("../assets/icons/horizontal-line-remove-button.svg");
+    background-repeat: no-repeat;
+    background-size: 4vw;
+    font-size: 8vw;
+    padding: 4vw;
+    text-align: left;
+    background-position: 72vw 7vw;
+    background-color: #eeee;
+    border: none;
+    border-radius: 0;
+  }
+  &__work-name-box-open {
+    margin: 7vw 0;
+    border-bottom: solid 0.3vw $Black;
+    padding-bottom: 3vw;
+  }
+
+  &__work-name {
+    font-family: AvenirRegular;
+    font-size: 5vw;
+    padding: 1vw 0;
+    cursor: pointer;
+  }
+  &__work-name-box {
+    margin: 7vw 0;
+  }
+  &__logout {
+    width: 4vw;
+    align-self: flex-end;
+    margin: 3vw;
+    cursor: pointer;
+  }
+
+  &__friend {
+    text-decoration: none;
+    color: $Black;
+    padding: 5vw;
+    background-color: #f5e3e3;
+    margin: 2vw 3vw;
+    border-radius: 20vw;
+  }
+  &__frind-routines {
+    padding: 5vw 0;
+    border: solid 0.3vw #cdcdcd;
+    margin-top: 15vw;
+  }
+  &__div-frien {
+    display: flex;
+  }
+  &__frind-rout-title {
+    font-family: AvenirRegular;
+    padding: 5vw 0;
+    font-size: 5.1vw;
+    text-align: center;
+    padding: 5vw 0;
+  }
+  &__my-work {
+    font-family: AvenirRegular;
+    text-align: center;
+    font-size: 6vw;
+    margin: 12vw;
+  }
+
+  &__line {
+    margin: 3vw 0;
+    box-shadow: 1px 4px 5px 4px #cdcdcd;
+    border-radius: 1vw;
+    padding: 2vw;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    display: block;
+    color: #afafaf;
+    font-family: AvenirRegular;
+    font-size: 4vw;
+  }
+  &__info {
+    margin: 0vw;
+    font-size: 8vw;
+  }
+  &__info-box {
+    background: #eee;
+    border-radius: 5vw;
+  }
+  &__info-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__date {
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 3vw 0;
+    color: #afafaf;
+    font-family: AvenirRegular;
+  }
+  &__span {
+    margin: 3vw;
+    text-align: center;
+    padding: 5vw;
+    border-radius: 2vw;
+  }
+  &__date {
+    height: fit-content;
+  }
+  &__work-level {
+    font-size: 5vw;
+    font-family: AvenirRegular;
+    padding: 1vw 0;
+  }
+  &__work-target {
+    font-size: 5vw;
+    font-family: AvenirRegular;
+    padding: 1vw 0;
+  }
+
+  &__medias {
+    display: flex;
+    justify-content: center;
+    padding: 2vw;
+  }
+  &__share-btn {
+    margin: 2vw;
+  }
+  &__share-buttons {
+    margin: 5vw 0;
+  }
+  &__share-buttons-title {
+    margin: 5vw;
+    font-size: 5vw;
+    font-family: AvenirRegular;
+    font-size: 4vw;
+    text-align: center;
+  }
+}
+
+@include medium {
+  .userpro {
+    &__days-tablet {
+      display: flex;
+      justify-content: space-around;
+      font-size: 2vw;
+      margin-top: 3vw;
+    }
+    &__work-day {
+      display: none;
+    }
+    &__exercise {
+      display: flex;
+    }
+    &__info {
+      font-size: 4vw;
+    }
+    &__box {
+      width: fit-content;
+      margin: 3vw auto;
+    }
+    &__mydiv {
+      padding: 2vw 0;
+    }
+    &__logout {
+      padding: 0.6vw;
+    }
+    &__name {
+      margin: 3vw;
+      padding: 0;
+    }
+    &__work-name-box {
+      margin: 0;
+    }
+    &__img {
+      width: 35vw;
+    }
+    &__img-box {
+      border: none;
+      flex-direction: row;
+      border-bottom: solid 0.2vw #cdcdcd;
+      padding-bottom: 4vw;
+    }
+    &__info-box {
+      width: fit-content;
+      height: fit-content;
+      margin: 0;
+    }
+    &__exerc {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 10vw;
+    }
+    &__date {
+      font-size: 2.5vw;
+      padding: 0;
+    }
+    &__link {
+    }
+    &__info-us {
+      justify-content: space-around;
+    }
+    &__days-tablet {
+      width: 90vw;
+      margin: 2vw 0;
+      background-color: #e1e1e1;
+      padding: 2vw;
+    }
+    &__line-tablet {
+      width: 18vw;
+      height: 10vw;
+      margin: 0;
+    }
+
+    &__my-work {
+      margin: 1vw;
+      text-align: center;
+      font-size: 4vw;
+      margin-bottom: 8vw;
+    }
+    &__work-target {
+      font-size: 2.5vw;
+      text-align: center;
+    }
+    &__work-name {
+      font-size: 2.5vw;
+      text-align: center;
+    }
+    &__work-name-box {
+      margin: 0;
+    }
+    &__work-level {
+      font-size: 2.5vw;
+      text-align: center;
+    }
+    &__label {
+      font-size: 2.2vw;
+      text-align: center;
+    }
+    &__frind-rout-title {
+      font-size: 3vw;
+      padding: 2vw 0;
+    }
+    &__frind-routines {
+      border: none;
+      border-top: solid 0.2vw #cdcdcd;
+    }
+    &__div-frien {
+      display: inline-flex;
+    }
+    &__friend {
+      padding: 3vw;
+      margin: 0.8vw;
+    }
+    &__span {
+      margin: 0;
+      padding: 0;
+    }
+    &__share-buttons-title {
+      font-size: 3vw;
+      margin: 0;
+    }
+  }
+}
+
+@include huge {
+  .userpro {
+    &__img-box {
+      display: flex;
+      margin: 5vw;
+    }
+    &__img {
+      width: 20vw;
+    }
+    &__info {
+      font-size: 3vw;
+    }
+    &__name {
+      font-size: 3.5vw;
+    }
+    &__info-box {
+      margin: 3vw;
+    }
+    &__date {
+      font-size: 1.5vw;
+    }
+    &__my-work {
+      font-size: 2.5vw;
+      margin-bottom: 6vw;
+    }
+    &__frind-rout-title {
+      font-size: 2.5vw;
+      margin-bottom: 6vw;
+    }
+    &__share-buttons-title {
+      font-size: 1.6vw;
+      margin: 0;
+    }
+    &__work-name-box {
+      margin: 2vw;
+    }
+    &__days-tablet {
+      width: 70vw;
+      font-size: 1.2vw;
+    }
+    &__work-name {
+      font-size: 1.5vw;
+    }
+    &__work-name-box {
+      margin: 0;
+    }
+    &__work-level {
+      font-size: 1.5vw;
+    }
+    &__work-target {
+      font-size: 1.5vw;
+    }
+
+    &__label {
+      font-size: 1.4vw;
+    }
+    &__line {
+      width: 10vw;
+      height: 8vw;
+    }
+    &__line-tablet {
+      width: 14vw;
+      height: 6vw;
+      margin: 2vw 0 0;
+    }
+
+    &__exerc {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 0;
+    }
+
+    &__exerc-link {
+      text-decoration: none;
+    }
+
+    &__img-box {
+      border-bottom: solid 0.1vw #cdcdcd;
+    }
+    &__frind-routines {
+      border-top: solid 0.1vw #cdcdcd;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $Black;
+    }
+    &__div-frien {
+      display: inline-flex;
+    }
+    &__friend {
+      padding: 1.6vw;
+      margin: 1vw;
+    }
+  }
+}

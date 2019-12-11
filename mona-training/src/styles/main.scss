@@ -1,0 +1,32 @@
+@charset 'utf-8';
+@import "./partials/breakpoints";
+@import "./partials/fonts";
+@import "./partials/colors";
+@import "./partials/header";
+@import "./partials/userprofile";
+@import "./partials/exercSearch";
+@import "./partials/createNew";
+@import "./partials/footer";
+@import "./partials/signup";
+@import "./partials/exercPage";
+@import "./partials//friend";
+
+body,
+html {
+  font-family: "AvenirRegular", "AvenirDemi", "AvenirBold";
+  // font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $Black;
+  background: #eeee;
+  color: $Black;
+  height: fit-content;
+  width: 100vw;
+  margin: 0;
+}
+
+*,
+* *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
