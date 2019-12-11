@@ -217,12 +217,13 @@
 }
 
 .userpro__name {
-  overflow: auto;
   font-family: AvenirThin;
   text-align: center;
   margin: 3vw 0;
   padding: 5vw;
   border-radius: 2vw;
+  overflow: hidden;
+  max-width: 90vw;
 }
 
 .userpro__link {
@@ -245,7 +246,7 @@
   font-size: 8vw;
   padding: 4vw;
   text-align: left;
-  background-position: 72vw 7vw;
+  background-position: 80vw 7vw;
   background-color: #eeee;
   border: none;
   border-bottom: solid 0.3vw #323232;
@@ -260,7 +261,7 @@
   font-size: 8vw;
   padding: 4vw;
   text-align: left;
-  background-position: 72vw 7vw;
+  background-position: 80vw 7vw;
   background-color: #eeee;
   border: none;
   border-radius: 0;
@@ -301,9 +302,9 @@
 }
 
 .userpro__frind-routines {
-  padding: 5vw 0;
   border: solid 0.3vw #cdcdcd;
   margin-top: 15vw;
+  padding: 2vw 0 4vw;
 }
 
 .userpro__div-frien {
@@ -328,11 +329,11 @@
 }
 
 .userpro__line {
-  margin: 3vw 0;
-  -webkit-box-shadow: 1px 4px 5px 4px #cdcdcd;
-          box-shadow: 1px 4px 5px 4px #cdcdcd;
   border-radius: 1vw;
   padding: 2vw;
+  margin: 5vw 0;
+  -webkit-box-shadow: 1px 3px 3px 3px #cdcdcd;
+          box-shadow: 1px 3px 3px 3px #cdcdcd;
 }
 
 .userpro__label {
@@ -422,11 +423,10 @@
 }
 
 .userpro__share-buttons-title {
-  margin: 5vw;
-  font-size: 5vw;
   font-family: AvenirRegular;
   font-size: 4vw;
   text-align: center;
+  margin: 10vw 5vw 1vw;
 }
 
 @media only screen and (min-width: 768px) {
@@ -497,7 +497,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-bottom: 10vw;
+    padding-bottom: 0vw;
   }
   .userpro__date {
     font-size: 2.5vw;
@@ -549,7 +549,7 @@
   }
   .userpro__frind-routines {
     border: none;
-    border-top: solid 0.2vw #cdcdcd;
+    border: solid 0.2vw #cdcdcd;
   }
   .userpro__div-frien {
     display: -webkit-inline-box;
@@ -565,8 +565,11 @@
     padding: 0;
   }
   .userpro__share-buttons-title {
-    font-size: 3vw;
+    font-size: 2.5vw;
     margin: 0;
+  }
+  .userpro__share-btn {
+    margin: 0.5vw;
   }
 }
 
@@ -598,7 +601,10 @@
   }
   .userpro__frind-rout-title {
     font-size: 2.5vw;
-    margin-bottom: 6vw;
+    margin-bottom: 3vw;
+  }
+  .userpro__share-buttons {
+    margin: 0;
   }
   .userpro__share-buttons-title {
     font-size: 1.6vw;
@@ -622,6 +628,7 @@
   }
   .userpro__work-target {
     font-size: 1.5vw;
+    line-height: 2vw;
   }
   .userpro__label {
     font-size: 1.4vw;
@@ -651,7 +658,8 @@
     border-bottom: solid 0.1vw #cdcdcd;
   }
   .userpro__frind-routines {
-    border-top: solid 0.1vw #cdcdcd;
+    border: solid 0.1vw #cdcdcd;
+    padding: 2vw 0;
   }
   .userpro__link {
     text-decoration: none;
@@ -947,6 +955,7 @@
 }
 
 .createNew__button-sb {
+  width: 90vw;
   font-family: AvenirRegular;
   color: #fafafa;
   text-transform: uppercase;

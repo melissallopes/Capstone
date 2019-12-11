@@ -39,7 +39,7 @@ export default class UserProfile extends Component {
 
   logoutHandle = e => {
     e.preventDefault();
-    const logoutUrl = "http:localhost:5000/api/user/logout";
+    const logoutUrl = "http://localhost:5000/api/user/logout";
     axios
 
       .post(logoutUrl, {
@@ -47,23 +47,6 @@ export default class UserProfile extends Component {
       })
       .then(res => this.setState({ isLoggedin: false }));
   };
-
-  //  state = {
-  //    date: "",
-  //    isLoggedin: true,
-  //    showing: [false, false, false, false, false]
-  //  };
-
-  //  logoutHandle = e => {
-  //    e.preventDefault();
-  //    const logoutUrl = "http:localhost:5000/api/user/logout";
-  //    axios
-
-  //      .post(logoutUrl, {
-  //        email: this.props.user.email
-  //      })
-  //      .then(res => this.setState({ isLoggedin: false }));
-  //  };
 
   render() {
     if (!this.state.isLoggedin) return <SignUp />;
