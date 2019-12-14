@@ -20,12 +20,30 @@
 
 @include medium {
   .friend {
+    padding: 10vw 0;
     &__title {
+      font-size: 4vw;
     }
     &__div {
+      margin: 8vw 3vw;
     }
     &__goback {
       width: 1.3vw;
+    }
+  }
+}
+
+@include huge {
+  .friend {
+    &__title {
+      font-size: 2.5vw;
+    }
+    &__div {
+      width: 70vw;
+      margin: 5vw auto;
+    }
+    &__goback {
+      width: 0.7vw;
     }
   }
 }

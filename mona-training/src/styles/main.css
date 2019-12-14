@@ -1934,8 +1934,30 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .friend {
+    padding: 10vw 0;
+  }
+  .friend__title {
+    font-size: 4vw;
+  }
+  .friend__div {
+    margin: 8vw 3vw;
+  }
   .friend__goback {
     width: 1.3vw;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .friend__title {
+    font-size: 2.5vw;
+  }
+  .friend__div {
+    width: 70vw;
+    margin: 5vw auto;
+  }
+  .friend__goback {
+    width: 0.7vw;
   }
 }
 
