@@ -11,7 +11,7 @@ export default class Exercise extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/exercises/${this.props.match.params.id}`)
+      .get(`http://localhost:8000/api/exercises/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ exercise: res.data[0] });
       });

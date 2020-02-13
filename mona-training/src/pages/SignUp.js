@@ -6,8 +6,8 @@ import axios from "axios";
 // import Logo from "../assets/images/Mona training.jpg";
 import CreateNewUser from "./CreateNewUser";
 
-const loginUrl = "http://localhost:5000/api/user/login";
-const signUpUrl = "http://localhost:5000/api/user/signup";
+const loginUrl = "http://localhost:8000/api/user/login";
+const signUpUrl = "http://localhost:8000/api/user/signup";
 
 class SignUp extends Component {
   state = {
@@ -21,12 +21,12 @@ class SignUp extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:5000/api/user").then(res => {
+    axios.get("http://localhost:8000/api/user").then(res => {
       const currentUser = res.data.find(profile => profile.isLoggedin === true);
       if (currentUser) this.setState({ user: currentUser, isLoggedin: true });
     });
 
-    axios.get("http://localhost:5000/api/user").then(res => {
+    axios.get("http://localhost:8000/api/user").then(res => {
       this.setState({ allUsers: res.data });
     });
   }

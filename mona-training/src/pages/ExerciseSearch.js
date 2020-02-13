@@ -15,7 +15,7 @@ export default class ExerciseSearch extends Component {
     this.loadMore = this.loadMore.bind(this);
   }
   componentDidMount() {
-    const URL = "http://localhost:5000/api";
+    const URL = "http://localhost:8000/api";
 
     axios
       .get(`${URL}/exercises`)

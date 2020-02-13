@@ -16,7 +16,7 @@ export default class FriendWork extends Component {
     this.updatePredicate();
     window.addEventListener("resize", this.updatePredicate);
     axios
-      .get(`http://localhost:5000/api/user/${this.props.match.params.email}`)
+      .get(`http://localhost:8000/api/user/${this.props.match.params.email}`)
       .then(res => {
         this.setState({ friend: res.data[0] });
       });
@@ -31,14 +31,6 @@ export default class FriendWork extends Component {
       isDesk: window.innerWidth > 767
     });
   }
-
-  // componentDidMount() {
-  //   axios
-  //     .get(`http://localhost:5000/api/user/${this.props.match.params.email}`)
-  //     .then(res => {
-  //       this.setState({ friend: res.data[0] });
-  //     });
-  // }
 
   render() {
     let workoutList = "";

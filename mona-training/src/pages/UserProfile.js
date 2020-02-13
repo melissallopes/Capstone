@@ -39,7 +39,7 @@ export default class UserProfile extends Component {
 
   logoutHandle = e => {
     e.preventDefault();
-    const logoutUrl = "http://localhost:5000/api/user/logout";
+    const logoutUrl = "http://localhost:8000/api/user/logout";
     axios
 
       .post(logoutUrl, {

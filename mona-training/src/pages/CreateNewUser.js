@@ -20,7 +20,7 @@ export default class CreateNewUser extends Component {
     event.preventDefault();
 
     axios
-      .put(`http://localhost:5000/api/user/${this.props.newUser.email}`, {
+      .put(`http://localhost:8000/api/user/${this.props.newUser.email}`, {
         weight: event.target.weight.value,
         height: event.target.height.value,
         access: [
@@ -70,7 +70,7 @@ export default class CreateNewUser extends Component {
         // console.log(res.data);
         this.setState({ user: res.data[0] });
         axios
-          .post("http://localhost:5000/api/user/access", {
+          .post("http://localhost:8000/api/user/access", {
             access: [
               { name: this.props.newUser.name, email: this.props.newUser.email }
             ],
