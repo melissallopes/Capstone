@@ -2,7 +2,7 @@
 
 const express = require("express");
 const cors = require("cors");
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -12,6 +12,13 @@ app.use(cors());
 app.use("/api/exercises", require("./routes/api/exercises"));
 app.use("/api/user", require("./routes/api/user"));
 
-app.listen(PORT, () => {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
   console.log("listening");
-});
+}
+app.listen(port);
+
+// app.listen(PORT, () => {
+//   console.log("listening");
+// });
