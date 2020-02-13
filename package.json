@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
+    "start": "node ./server/server",
     "eject": "react-scripts eject",
     "client": "npm start --prefix ./mona-training",
     "server": "nodemon ./server/server.js",
