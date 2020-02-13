@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
     "eject": "react-scripts eject",
-    "client": "npm start --prefix ../mona-training",
-    "server": "nodemon server.js",
+    "client": "npm start --prefix ./mona-training",
+    "server": "nodemon ./server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "engines": {
@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.0.1",
+    "nodemon": "^2.0.2",
     "react-router-dom": "^5.1.2",
     "sequelize": "^5.21.2",
     "sequelize-cli": "^5.5.1"
