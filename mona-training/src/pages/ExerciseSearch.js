@@ -15,10 +15,13 @@ export default class ExerciseSearch extends Component {
     this.loadMore = this.loadMore.bind(this);
   }
   componentDidMount() {
-    const URL = "http://localhost:8000";
+    const URL = "http://localhost:5000";
+    const token = sessionStorage.authToken;
 
     axios
-      .get(`${URL}/exercises`)
+      .get(`${URL}/exercises`, {
+        headers: { Authorization: token },
+      })
       .then((response) => {
         this.setState({
           exercises: response.data,

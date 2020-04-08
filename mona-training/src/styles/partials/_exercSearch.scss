@@ -9,7 +9,7 @@
     background-image: url("../assets/icons/Icon-search.svg");
     background-repeat: no-repeat;
     background-color: $Alabaster;
-    background-position: 5vw;
+    background-position: 3.2vw;
     width: 80vw;
     border: none;
     border-radius: 20vw;
@@ -134,6 +134,7 @@
     &-input {
       width: 40vw;
       padding: 30px 8px 30px 67px;
+      // padding-left: 90px;
       background-position-x: 3vw;
       background-position-y: 1.7vw;
       margin: 5vw auto 2vw;

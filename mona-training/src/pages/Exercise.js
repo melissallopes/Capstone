@@ -10,8 +10,12 @@ export default class Exercise extends Component {
   };
 
   componentDidMount() {
+    const token = sessionStorage.authToken;
     axios
-      .get(`http://localhost:8000/exercises/${this.props.match.params.id}`)
+      .get(`http://localhost:5000/exercises/${this.props.match.params.id}`, {
+        headers: { Authorization: token },
+      })
+
       .then((res) => {
         this.setState({ exercise: res.data[0] });
       });

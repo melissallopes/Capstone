@@ -19,6 +19,7 @@ export default class UserProfile extends Component {
       date: "",
       isLoggedin: true,
       showing: [false, false, false, false, false],
+      user: undefined,
     };
     this.updatePredicate = this.updatePredicate.bind(this);
   }
@@ -39,13 +40,17 @@ export default class UserProfile extends Component {
 
   logoutHandle = (e) => {
     e.preventDefault();
-    const logoutUrl = "http://localhost:8000/user/logout";
+    const logoutUrl = "http://localhost:5000/user/logout";
     axios
 
       .post(logoutUrl, {
         email: this.props.user.email,
       })
-      .then((res) => this.setState({ isLoggedin: false }));
+      .then(
+        (res) => localStorage.clear(),
+        sessionStorage.clear(),
+        this.setState({ isLoggedin: false })
+      );
   };
 
   render() {
@@ -61,9 +66,8 @@ export default class UserProfile extends Component {
           today.getFullYear();
 
       const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-      if (this.props.user) {
+      if (this.props.user && this.state.isLoggedin === true) {
         if (!this.state.isDesk) {
-          console.log(this.props.user.workouts);
           workoutList = this.props.user.workouts.map((work, index) => {
             return (
               <div className="userpro__work-div" key={work.id}>

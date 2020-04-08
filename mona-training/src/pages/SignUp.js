@@ -6,8 +6,8 @@ import axios from "axios";
 // import Logo from "../assets/images/Mona training.jpg";
 import CreateNewUser from "./CreateNewUser";
 
-const loginUrl = "http://localhost:8000/user/login";
-const signUpUrl = "http://localhost:8000/user/signup";
+const loginUrl = "http://localhost:5000/user/login";
+const signUpUrl = "http://localhost:5000/user/signup";
 
 class SignUp extends Component {
   state = {
@@ -21,14 +21,13 @@ class SignUp extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8000/user").then((res) => {
-      const currentUser = res.data.find(
-        (profile) => profile.isLoggedin === true
-      );
-      if (currentUser) this.setState({ user: currentUser, isLoggedin: true });
-    });
-
-    axios.get("http://localhost:8000/user").then((res) => {
+    // axios.get("http://localhost:5000/user").then((res) => {
+    //   const currentUser = res.data.find(
+    //     (profile) => profile.isLoggedin === true
+    //   );
+    //   if (currentUser) this.setState({ user: currentUser, isLoggedin: true });
+    // });
+    axios.get("http://localhost:5000/user").then((res) => {
       this.setState({ allUsers: res.data });
     });
   }
@@ -41,9 +40,12 @@ class SignUp extends Component {
         email: event.target.email.value,
         password: event.target.password.value,
       })
-      .then(({ data }) => {
+      .then((res) => {
+        if (res.status === 200) {
+          sessionStorage.authToken = res.data.token;
+        }
         this.setState({
-          user: data,
+          user: res.data.user,
           isLoggedin: true,
         });
       })
@@ -84,14 +86,13 @@ class SignUp extends Component {
     if (this.state.isSignedup && this.state.newUser) {
       return (
         <CreateNewUser
-          users={this.state.allUsers}
           newUser={this.state.newUser}
+          users={this.state.allUsers}
           logout={this.logout}
         />
       );
     }
     if (this.state.user && this.state.isLoggedin) {
-      console.log(this.state.isLoggedin, this.state.user);
       return <UserProfile user={this.state.user} />;
     } else {
       return this.state.showSignUp ? (

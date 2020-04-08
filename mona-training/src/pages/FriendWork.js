@@ -8,16 +8,21 @@ export default class FriendWork extends Component {
     this.state = {
       isDesk: false,
       friend: "",
-      showing: [false, false, false, false, false]
+      showing: [false, false, false, false, false],
     };
     this.updatePredicate = this.updatePredicate.bind(this);
   }
   componentDidMount() {
     this.updatePredicate();
     window.addEventListener("resize", this.updatePredicate);
+
+    const token = sessionStorage.authToken;
     axios
-      .get(`http://localhost:8000/api/user/${this.props.match.params.email}`)
-      .then(res => {
+
+      .get(`http://localhost:5000/user/${this.props.match.params.email}`, {
+        headers: { Authorization: token },
+      })
+      .then((res) => {
         this.setState({ friend: res.data[0] });
       });
   }
@@ -28,7 +33,7 @@ export default class FriendWork extends Component {
 
   updatePredicate() {
     this.setState({
-      isDesk: window.innerWidth > 767
+      isDesk: window.innerWidth > 767,
     });
   }
 
@@ -49,7 +54,7 @@ export default class FriendWork extends Component {
                       array[index] = !this.state.showing[index];
 
                       this.setState({
-                        showing: array
+                        showing: array,
                       });
                     }}
                   >
