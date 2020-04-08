@@ -6,13 +6,13 @@ import axios from "axios";
 export default class Exercise extends Component {
   state = {
     exercise: undefined,
-    isNextPage: false
+    isNextPage: false,
   };
 
   componentDidMount() {
     axios
-      .get(`http://localhost:8000/api/exercises/${this.props.match.params.id}`)
-      .then(res => {
+      .get(`http://localhost:8000/exercises/${this.props.match.params.id}`)
+      .then((res) => {
         this.setState({ exercise: res.data[0] });
       });
   }
@@ -25,7 +25,7 @@ export default class Exercise extends Component {
             <div>
               <button
                 className="exercise__bt-back"
-                onClick={event => {
+                onClick={(event) => {
                   event.preventDefault();
                   this.setState({ isNextPage: !this.state.isNextPage });
                 }}
@@ -88,7 +88,7 @@ export default class Exercise extends Component {
                 </div>
                 <button
                   className="exercise__bt-next"
-                  onClick={event => {
+                  onClick={(event) => {
                     event.preventDefault();
                     this.setState({ isNextPage: !this.state.isNextPage });
                   }}

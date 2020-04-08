@@ -10,25 +10,25 @@ export default class ExerciseSearch extends Component {
       filteredExercises: "",
       visible: 9,
       error: false,
-      search: ""
+      search: "",
     };
     this.loadMore = this.loadMore.bind(this);
   }
   componentDidMount() {
-    const URL = "http://localhost:8000/api";
+    const URL = "http://localhost:8000";
 
     axios
       .get(`${URL}/exercises`)
-      .then(response => {
+      .then((response) => {
         this.setState({
           exercises: response.data,
-          filteredExercises: response.data
+          filteredExercises: response.data,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         this.setState({
-          error: true
+          error: true,
         });
       });
   }
@@ -46,9 +46,9 @@ export default class ExerciseSearch extends Component {
   //////////////////
 
   filteredMuscles = () => {
-    return this.state.exercises.filter(ex => {
+    return this.state.exercises.filter((ex) => {
       let eachMuscle = ex.muscles.split(", ");
-      eachMuscle = eachMuscle.map(fit => fit.toLowerCase());
+      eachMuscle = eachMuscle.map((fit) => fit.toLowerCase());
 
       if (eachMuscle.includes(this.state.search.toLowerCase())) {
         return ex;
@@ -56,7 +56,7 @@ export default class ExerciseSearch extends Component {
     });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ search: event.target.value }, () => {
       if (this.filteredMuscles().length !== 0)
         this.setState({ filteredExercises: this.filteredMuscles() });
@@ -65,7 +65,7 @@ export default class ExerciseSearch extends Component {
 
   ///////////////
 
-  handleClick = event => {
+  handleClick = (event) => {
     this.setState({ filteredExercises: this.state.exercises, visible: 9 });
   };
 

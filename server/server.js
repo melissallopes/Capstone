@@ -9,8 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/exercises", require("./routes/api/exercises"));
-app.use("/api/user", require("./routes/api/user"));
+app.use("/exercises", require("./routes/api/exercises"));
+app.use("/user", require("./routes/api/user"));
 
 let port = process.env.PORT;
 if (port == null || port == "") {

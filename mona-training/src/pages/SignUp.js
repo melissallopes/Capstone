@@ -6,8 +6,8 @@ import axios from "axios";
 // import Logo from "../assets/images/Mona training.jpg";
 import CreateNewUser from "./CreateNewUser";
 
-const loginUrl = "http://localhost:8000/api/user/login";
-const signUpUrl = "http://localhost:8000/api/user/signup";
+const loginUrl = "http://localhost:8000/user/login";
+const signUpUrl = "http://localhost:8000/user/signup";
 
 class SignUp extends Component {
   state = {
@@ -17,41 +17,43 @@ class SignUp extends Component {
     status: "",
     showSignUp: false,
     isLoggedin: false,
-    isSignedup: false
+    isSignedup: false,
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8000/api/user").then(res => {
-      const currentUser = res.data.find(profile => profile.isLoggedin === true);
+    axios.get("http://localhost:8000/user").then((res) => {
+      const currentUser = res.data.find(
+        (profile) => profile.isLoggedin === true
+      );
       if (currentUser) this.setState({ user: currentUser, isLoggedin: true });
     });
 
-    axios.get("http://localhost:8000/api/user").then(res => {
+    axios.get("http://localhost:8000/user").then((res) => {
       this.setState({ allUsers: res.data });
     });
   }
 
   ///////login and sign up
-  login = event => {
+  login = (event) => {
     event.preventDefault();
     axios
       .post(loginUrl, {
         email: event.target.email.value,
-        password: event.target.password.value
+        password: event.target.password.value,
       })
       .then(({ data }) => {
         this.setState({
           user: data,
-          isLoggedin: true
+          isLoggedin: true,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     event.target.reset();
   };
 
-  signUp = event => {
+  signUp = (event) => {
     event.preventDefault();
     axios
       .post(signUpUrl, {
@@ -64,15 +66,15 @@ class SignUp extends Component {
         height: "",
         access: [],
         workouts: [],
-        isLoggedin: false
+        isLoggedin: false,
       })
-      .then(res => {
+      .then((res) => {
         this.setState({
           newUser: res.data,
-          isSignedup: true
+          isSignedup: true,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     event.target.reset();
@@ -88,7 +90,8 @@ class SignUp extends Component {
         />
       );
     }
-    if (this.state.isLoggedin) {
+    if (this.state.user && this.state.isLoggedin) {
+      console.log(this.state.isLoggedin, this.state.user);
       return <UserProfile user={this.state.user} />;
     } else {
       return this.state.showSignUp ? (
@@ -125,7 +128,7 @@ class SignUp extends Component {
                 <a
                   className="signup__link"
                   href="."
-                  onClick={event => {
+                  onClick={(event) => {
                     event.preventDefault();
                     this.setState({ showSignUp: false });
                   }}
@@ -165,7 +168,7 @@ class SignUp extends Component {
                 <a
                   className="signup__link"
                   href="."
-                  onClick={event => {
+                  onClick={(event) => {
                     event.preventDefault();
                     this.setState({ showSignUp: true });
                   }}

@@ -5,7 +5,7 @@ import axios from "axios";
 import {
   FacebookShareButton,
   WhatsappShareButton,
-  TwitterShareButton
+  TwitterShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
 import SignUp from "./SignUp";
@@ -18,7 +18,7 @@ export default class UserProfile extends Component {
       isDesk: false,
       date: "",
       isLoggedin: true,
-      showing: [false, false, false, false, false]
+      showing: [false, false, false, false, false],
     };
     this.updatePredicate = this.updatePredicate.bind(this);
   }
@@ -33,19 +33,19 @@ export default class UserProfile extends Component {
 
   updatePredicate() {
     this.setState({
-      isDesk: window.innerWidth > 767
+      isDesk: window.innerWidth > 767,
     });
   }
 
-  logoutHandle = e => {
+  logoutHandle = (e) => {
     e.preventDefault();
-    const logoutUrl = "http://localhost:8000/api/user/logout";
+    const logoutUrl = "http://localhost:8000/user/logout";
     axios
 
       .post(logoutUrl, {
-        email: this.props.user.email
+        email: this.props.user.email,
       })
-      .then(res => this.setState({ isLoggedin: false }));
+      .then((res) => this.setState({ isLoggedin: false }));
   };
 
   render() {
@@ -63,6 +63,7 @@ export default class UserProfile extends Component {
       const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
       if (this.props.user) {
         if (!this.state.isDesk) {
+          console.log(this.props.user.workouts);
           workoutList = this.props.user.workouts.map((work, index) => {
             return (
               <div className="userpro__work-div" key={work.id}>
@@ -75,7 +76,7 @@ export default class UserProfile extends Component {
                         array[index] = !this.state.showing[index];
 
                         this.setState({
-                          showing: array
+                          showing: array,
                         });
                       }}
                     >
@@ -189,7 +190,7 @@ export default class UserProfile extends Component {
                   <h2 className="userpro__frind-rout-title">
                     My friend's workout routines
                   </h2>
-                  {this.props.user.access.map(friend => {
+                  {this.props.user.access.map((friend) => {
                     return (
                       <div className="userpro__div-frien">
                         <Link
