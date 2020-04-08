@@ -49,7 +49,6 @@ router.get("/", (req, res) => {
 });
 /////// LOGIN
 router.post("/login", (req, res) => {
-  console.log(req.body.email);
   const user = users.find(
     (user) => user.email.toLowerCase() === req.body.email.toLowerCase()
   );
@@ -175,7 +174,6 @@ router.put("/new", (req, res) => {
 
 //////POST FRIENDS ACCOUNT
 router.post("/access", (req, res) => {
-  console.log(req.body);
   if (req.body.emails) {
     req.body.emails.map((email) => {
       users.forEach((user) => {
